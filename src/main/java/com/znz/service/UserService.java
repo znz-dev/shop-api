@@ -23,4 +23,6 @@ public interface UserService {
 	List<User> getUsersByParams();
 
 	User createUserByParams(User user);
+
+	User updateUserByParams(User user);
 }

@@ -47,6 +47,17 @@ public class UserController {
 		return  userService.getUserById(userId);
 	}
 	
+
+	/*
+	 * 通过用户id更新用户信息 (update)
+	 */
+	@RequestMapping(value="/{userId}",method=RequestMethod.PUT)
+	public @ResponseBody User updateUserInJson(@ModelAttribute User user, @PathVariable Integer userId){
+		System.out.println("this is update");
+		user.setId(userId);
+		return  userService.updateUserByParams(user);
+	}
+	
 	/*
 	 * 通过用户id删除用户(delete)
 	 */

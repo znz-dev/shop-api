@@ -37,4 +37,10 @@ public class UserServiceImpl implements UserService {
 		user = userDao.createUserByParams(user);
 		return user;
 	}
+
+	public User updateUserByParams(User user) {
+		UserDao userDao = new UserDao();
+		user = userDao.updateUserByParams(user);
+		return user;
+	}
 }

@@ -49,6 +49,14 @@
     SELECT * FROM user
   </select>
   
+  <update id="update" parameterType="com.znz.model.User">
+    UPDATE user SET
+    username = #{username,jdbcType=VARCHAR},
+    password = #{password,jdbcType=VARCHAR}
+    WHERE
+    id = #{id,jdbcType=INTEGER}
+  </update>
+  
   <delete id="delete" parameterType="com.znz.model.User">
     DELETE FROM user WHERE id = #{id}
   </delete>

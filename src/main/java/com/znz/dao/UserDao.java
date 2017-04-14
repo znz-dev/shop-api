@@ -102,4 +102,23 @@ public class UserDao {
 		return user;
 	}
 
+	public User updateUserByParams(User user) {
+		// TODO Auto-generated method stub
+		DBAccess dbAccess = new DBAccess();
+		SqlSession sqlSession = null;
+		//通过sqlSession执行SQL语句
+		try{
+			sqlSession = dbAccess.getSqlSession();
+			sqlSession.update("User.update", user);
+			sqlSession.commit();
+		} catch(IOException e){
+			e.printStackTrace();
+		} finally{
+			if (sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return user;
+	}
+
 }
