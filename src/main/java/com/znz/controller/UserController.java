@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.znz.model.*;
 import com.znz.service.*;
 
-
+@CrossOrigin
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -23,6 +23,7 @@ public class UserController {
 	/*
 	 * 创建 (create)
 	 */
+	
 	@RequestMapping(value="" ,method=RequestMethod.POST)
 	public @ResponseBody User createUsersInJson(@ModelAttribute User user){
 		System.out.println("this is create");
@@ -32,6 +33,7 @@ public class UserController {
 	/*
 	 * 获取全部用户 (all)
 	 */
+	
 	@RequestMapping(value="" ,method=RequestMethod.GET)
 	public @ResponseBody List<User> getUsersInJson(){
 		System.out.println("this is all");
@@ -41,6 +43,7 @@ public class UserController {
 	/*
 	 * 通过用户id获取用户 (show)
 	 */
+	
 	@RequestMapping(value="/{userId}",method=RequestMethod.GET)
 	public @ResponseBody User getUserInJson(@PathVariable Integer userId){
 		System.out.println("this is show");
@@ -51,6 +54,7 @@ public class UserController {
 	/*
 	 * 通过用户id更新用户信息 (update)
 	 */
+	
 	@RequestMapping(value="/{userId}",method=RequestMethod.PUT)
 	public @ResponseBody User updateUserInJson(@ModelAttribute User user, @PathVariable Integer userId){
 		System.out.println("this is update");
@@ -61,6 +65,7 @@ public class UserController {
 	/*
 	 * 通过用户id删除用户(delete)
 	 */
+	
 	@RequestMapping(value="/{userId}",method=RequestMethod.DELETE)
 	public @ResponseBody void destroyUserById(@PathVariable Integer userId){
 		System.out.println("this is delete");
